@@ -195,3 +195,40 @@ def team_names
   end
   team_array
 end
+
+def player_numbers(team)
+  jersey_num = []
+  game_hash.each do |location, team_data| #location returns away, team_data returns hash
+  #  binding.pry
+    team_data.each do |attribute, data|
+  #  binding.pry
+      if data == team
+         attribute = game_hash[location][:players]
+    #     binding.pry
+          attribute.each do |player_name, categories|
+    #      binding.pry
+            jersey_num << categories[:number]
+          end
+      end
+    end
+  end
+  jersey_num
+end
+
+def player_stats(name)
+  game_hash.each do |location, team_data| #location returns away, team_data returns hash
+  #  binding.pry
+    team_data.each do |attribute, data|
+  #  binding.pry
+      if attribute == :players
+        data.each do |player_name, categories|
+    #      binding.pry
+          if player_name == name
+    #        binding.pry
+            return categories
+          end
+        end
+      end
+    end
+  end
+end
