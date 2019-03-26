@@ -232,3 +232,20 @@ def player_stats(name)
     end
   end
 end
+
+
+def big_shoe_rebounds
+  game_hash.each do |location, team_data| #location returns away, team_data returns hash
+  #  binding.pry
+    team_data.each do |attribute, data|
+  #  binding.pry
+      if attribute == :players
+        data.each do |player_name, categories|
+    #      binding.pry
+            return categories[:shoe]
+          end
+        end
+      end
+    end
+  end
+end
