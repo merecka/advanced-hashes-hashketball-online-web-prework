@@ -152,3 +152,21 @@ def num_points_scored(player)
     end
   end
 end
+
+def shoe_size(player)
+  game_hash.each do |location, team_data| #location returns away, team_data returns hash
+  #  binding.pry
+    team_data.each do |attribute, data|
+  #  binding.pry
+      if attribute == :players
+        data.each do |player_name, categories|
+    #      binding.pry
+          if player_name == player
+    #        binding.pry
+            return categories[:shoe]
+          end
+        end
+      end
+    end
+  end
+end
