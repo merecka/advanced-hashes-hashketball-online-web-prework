@@ -235,41 +235,42 @@ end
 
 
 def big_shoe_rebounds
+  new_hash = {}
   game_hash.each do |location, team_data| #location returns away, team_data returns hash
   #  binding.pry
     team_data.each do |attribute, data|
   #  binding.pry
       if attribute == :players
         data.each do |player_name, categories|
-          new_hash = {player_name => categories[:shoe]}
+          new_hash[player_name] = categories[:shoe]
     #      player_max_shoe = new_hash.key(new_hash.values.max)
       #    new_hash_max = new_hash.max_by{|name, shoe_size| shoe_size}
-          return game_hash[location][attribute][new_hash.key(new_hash.values.max)][:rebounds]
+                  #  return game_hash[location][attribute][new_hash.key(new_hash.values.max)][:rebounds]
       #    binding.pry
         end
       end
     end
   end
+  binding.pry
+  new_hash.key(new_hash.values.max)
+
+#  return game_hash[location][attribute][new_hash.key(new_hash.values.max)][:rebounds]
 end
 
 def most_points_scored
-  player_hash = {}
+  new_hash = {}
   game_hash.each do |location, team_data| #location returns away, team_data returns hash
-  #  binding.pry
-
     team_data.each do |attribute, data|
-  #  binding.pry
       if attribute == :players
-        binding.pry
         data.each do |player_name, categories|
-          new_hash = {player_name => categories[:points]}
-          binding.pry
-          return new_hash.key(new_hash.values.max)
+          new_hash[player_name] = categories[:points]
         end
       end
     end
   end
+  return new_hash.key(new_hash.values.max)
 end
+
 
 # def winning_team
 #   game_hash.each do |location, team_data| #location returns away, team_data returns hash
