@@ -253,7 +253,7 @@ end
 
 def most_points_scored
   new_hash = {}
-  game_hash.each do |location, team_data| #location returns away, team_data returns hash
+  game_hash.each do |location, team_data|
     team_data.each do |attribute, data|
       if attribute == :players
         data.each do |player_name, categories|
