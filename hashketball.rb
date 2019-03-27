@@ -235,28 +235,20 @@ end
 
 
 def big_shoe_rebounds
-  new_hash = {}
-  game_hash.each do |location, team_data| #location returns away, team_data returns hash
-  #  binding.pry
+  shoe_hash = {}
+  rebound_hash = {}
+  game_hash.each do |location, team_data|
     team_data.each do |attribute, data|
-  #  binding.pry
       if attribute == :players
         data.each do |player_name, categories|
-          new_hash[player_name] = categories[:shoe]
-    #      player_max_shoe = new_hash.key(new_hash.values.max)
-      #    new_hash_max = new_hash.max_by{|name, shoe_size| shoe_size}
-                  #  return game_hash[location][attribute][new_hash.key(new_hash.values.max)][:rebounds]
-      #    binding.pry
+          shoe_hash[player_name] = categories[:shoe]
+          rebound_hash[player_name] = categories[:rebounds]
         end
-      #  binding.pry
       end
-      new_hash.key(new_hash.values.max)
-    #  rebounds = game_hash[location][attribute][new_hash.key(new_hash.values.max)][:rebounds]
     end
-    rebounds = game_hash[location][attribute][new_hash.key(new_hash.values.max)][:rebounds]
   end
-  binding.pry
-  rebounds
+  big_shoe_player = shoe_hash.key(shoe_hash.values.max)
+  rebound_hash[big_shoe_player]
 end
 
 def most_points_scored
