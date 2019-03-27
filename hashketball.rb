@@ -259,19 +259,15 @@ def most_points_scored
 
     team_data.each do |attribute, data|
   #  binding.pry
-
       if attribute == :players
-
-        player_hash{attribute => data}
         binding.pry
-        #data.each do |player_name, categories|
-          #new_hash = {player_name => categories[:points]}
-          #binding.pry
-          # return new_hash.key(new_hash.values.max)
-        #end
+        data.each do |player_name, categories|
+          new_hash = {player_name => categories[:points]}
+          binding.pry
+          return new_hash.key(new_hash.values.max)
+        end
       end
     end
-
   end
 end
 
