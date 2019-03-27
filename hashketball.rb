@@ -241,9 +241,11 @@ def big_shoe_rebounds
   #  binding.pry
       if attribute == :players
         data.each do |player_name, categories|
-    #      binding.pry
-            return categories[:shoe]
-          end
+          new_hash = {player_name => categories[:shoe]}
+    #      player_max_shoe = new_hash.key(new_hash.values.max)
+      #    new_hash_max = new_hash.max_by{|name, shoe_size| shoe_size}
+          return game_hash[location][attribute][new_hash.key(new_hash.values.max)][:rebounds]
+      #    binding.pry
         end
       end
     end
