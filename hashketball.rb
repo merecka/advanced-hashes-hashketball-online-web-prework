@@ -251,3 +251,33 @@ def big_shoe_rebounds
     end
   end
 end
+
+def most_points_scored
+  game_hash.each do |location, team_data| #location returns away, team_data returns hash
+  #  binding.pry
+    team_data.each do |attribute, data|
+  #  binding.pry
+      if attribute == :players
+        data.each do |player_name, categories|
+          new_hash = {player_name => categories[:points]}
+           return new_hash.key(new_hash.values.max)
+        end
+      end
+    end
+  end
+end
+
+def winning_team
+  game_hash.each do |location, team_data| #location returns away, team_data returns hash
+    binding.pry
+    team_data.each do |attribute, data|
+  #  binding.pry
+      if attribute == :players
+        data.each do |player_name, categories|
+          new_hash = {player_name => categories[:points]}
+           return new_hash.key(new_hash.values.max)
+        end
+      end
+    end
+  end
+end
