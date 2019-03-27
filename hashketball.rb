@@ -248,13 +248,13 @@ def big_shoe_rebounds
                   #  return game_hash[location][attribute][new_hash.key(new_hash.values.max)][:rebounds]
       #    binding.pry
         end
+        binding.pry
+        new_hash.key(new_hash.values.max)
+        rebounds = game_hash[location][attribute][new_hash.key(new_hash.values.max)][:rebounds]
       end
     end
   end
-  binding.pry
-  new_hash.key(new_hash.values.max)
-
-#  return game_hash[location][attribute][new_hash.key(new_hash.values.max)][:rebounds]
+  rebounds
 end
 
 def most_points_scored

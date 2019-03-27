@@ -1,0 +1,26 @@
+
+[1mFrom:[0m /home/astronomical-unit-0315/advanced-hashes-hashketball-online-web-prework/hashketball.rb @ line 254 Object#big_shoe_rebounds:
+
+    [1;34m237[0m: [32mdef[0m [1;34mbig_shoe_rebounds[0m
+    [1;34m238[0m:   new_hash = {}
+    [1;34m239[0m:   game_hash.each [32mdo[0m |location, team_data| [1;34m#location returns away, team_data returns hash[0m
+    [1;34m240[0m:   [1;34m#  binding.pry[0m
+    [1;34m241[0m:     team_data.each [32mdo[0m |attribute, data|
+    [1;34m242[0m:   [1;34m#  binding.pry[0m
+    [1;34m243[0m:       [32mif[0m attribute == [33m:players[0m
+    [1;34m244[0m:         data.each [32mdo[0m |player_name, categories|
+    [1;34m245[0m:           new_hash[player_name] = categories[[33m:shoe[0m]
+    [1;34m246[0m:     [1;34m#      player_max_shoe = new_hash.key(new_hash.values.max)[0m
+    [1;34m247[0m:       [1;34m#    new_hash_max = new_hash.max_by{|name, shoe_size| shoe_size}[0m
+    [1;34m248[0m:                   [1;34m#  return game_hash[location][attribute][new_hash.key(new_hash.values.max)][:rebounds][0m
+    [1;34m249[0m:       [1;34m#    binding.pry[0m
+    [1;34m250[0m:         [32mend[0m
+    [1;34m251[0m:       [32mend[0m
+    [1;34m252[0m:     [32mend[0m
+    [1;34m253[0m:   [32mend[0m
+ => [1;34m254[0m:   binding.pry
+    [1;34m255[0m:   new_hash.key(new_hash.values.max)
+    [1;34m256[0m: 
+    [1;34m257[0m: [1;34m#  return game_hash[location][attribute][new_hash.key(new_hash.values.max)][:rebounds][0m
+    [1;34m258[0m: [32mend[0m
+
