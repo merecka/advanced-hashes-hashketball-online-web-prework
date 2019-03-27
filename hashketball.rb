@@ -262,7 +262,7 @@ def most_points_scored
       end
     end
   end
-  return new_hash.key(new_hash.values.max)
+  new_hash.key(new_hash.values.max)
 end
 
 
