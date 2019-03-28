@@ -298,7 +298,7 @@ def player_with_longest_name
   new_hash.key(new_hash.values.max)
 end
 
-def most_points_scored
+def long_name_steals_a_ton?
   new_hash = {}
   game_hash.each do |location, team_data|
     team_data.each do |attribute, data|
