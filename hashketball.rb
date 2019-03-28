@@ -266,19 +266,36 @@ def most_points_scored
 end
 
 
-# def winning_team
-#   game_hash.each do |location, team_data| #location returns away, team_data returns hash
-#   #  binding.pry
-#     team_data.each do |attribute, data|
-#   #  binding.pry
-#       if attribute == :players
-#   #      binding.pry
-#         data.each do |player_name, categories|
-#           new_hash = {player_name => categories[:points]}
-#       #    binding.pry
-#            return new_hash.key(new_hash.values.max)
-#         end
-#       end
-#     end
-#   end
-# end
+def winning_team
+  new_hash ={}
+  total_points = {}
+  game_hash.each do |location, team_data|
+    total = 0
+    team_data.each do |attribute, data|
+      if attribute == :players
+        data.each do |player_name, categories|
+          total += categories[:points]
+        end
+      end
+    end
+      team = game_hash[location][:team_name]
+      total_points[team] = total
+  end
+  total_points.key(total_points.values.max)
+end
+
+def player_with_longest_name
+  new_hash ={}
+  game_hash.each do |location, team_data|
+    team_data.each do |attribute, data|
+      if attribute == :players
+        data.each do |player_name, categories|
+          total += categories[:points]
+        end
+      end
+    end
+      team = game_hash[location][:team_name]
+      total_points[team] = total
+  end
+  total_points.key(total_points.values.max)
+end
