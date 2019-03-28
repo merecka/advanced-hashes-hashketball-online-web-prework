@@ -297,3 +297,17 @@ def player_with_longest_name
   end
   new_hash.key(new_hash.values.max)
 end
+
+def long_name_steals_a_ton?
+  new_hash = {}
+  game_hash.each do |location, team_data|
+    team_data.each do |attribute, data|
+      if attribute == :players
+        data.each do |player_name, categories|
+          new_hash[player_name] = categories[:steals]
+        end
+      end
+    end
+  end
+  new_hash.key(new_hash.values.max) == player_with_longest_name
+end
