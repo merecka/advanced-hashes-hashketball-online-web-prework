@@ -290,12 +290,10 @@ def player_with_longest_name
     team_data.each do |attribute, data|
       if attribute == :players
         data.each do |player_name, categories|
-          total += categories[:points]
+          new_hash[player_name] = player_name.length
         end
       end
     end
-      team = game_hash[location][:team_name]
-      total_points[team] = total
   end
-  total_points.key(total_points.values.max)
+  new_hash.key(new_hash.values.max)
 end
